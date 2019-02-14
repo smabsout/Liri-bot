@@ -39,7 +39,7 @@ userChoice(userInput,userQuery);
 
 
 function spotifyThis() {
-    console.log(`"Fetching Data"${userQuery}"`);
+    console.log(`"Getting Data...."${userQuery}"`);
 
     if (!userQuery) {
         userQuery = "Shape of my heart";
@@ -70,7 +70,7 @@ function concertThis(){
                 for (i = 0; i < 1; i++) {
                     console.log(`\nResults: \n\nArtist: ${userBand[i].lineup[0]} \nVenue: ${userBand[i].venue.name}\nVenue Location: ${userBand[i].venue.latitude},${userBand[i].venue.longitude}\nVenue City: ${userBand[i].venue.city}, ${userBand[i].venue.country}`)
                     let concertDate = moment(userBand[i].datetime).format("MM/DD/YYYY hh:00 A");
-                    console.log(`Date and Time: ${concertDate}\n\n- - - - -`);
+                    console.log(`Date and Time: ${concertDate}`);
                 };
             } else {
                 console.log('Error! Try Again!');
