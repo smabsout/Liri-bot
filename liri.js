@@ -2,8 +2,8 @@
 
 require("dotenv").config();
 
-const request = require("axios");
-const moment = require("moment");
+var request = require("axios");
+var moment = require("moment");
 const keys = require ("./keys.js");
 
 //initializing Spotify
@@ -18,8 +18,6 @@ const bandsintown = (keys.bandsintown);
 
 const userInput = process.argv[2];
 const userQuery = process.argv.slice(3).join(" ");
-// .join(" ");
-
 //logic
 
 function userChoice (userInput, userQuery){
