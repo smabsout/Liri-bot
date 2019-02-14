@@ -8,11 +8,11 @@ const keys = require ("./keys.js");
 
 //initializing Spotify
 
-const Spotify = require("node-spotify-api");
-const spotify = new Spotify(keys.spotify);
+var Spotify = require("node-spotify-api");
+var spotify = new Spotify(keys.spotify);
 //omdb and bandsintown apis
-const omdb = (keys.omdb);
-const bandsintown = (keys.bandsintown);
+var omdb = (keys.omdb);
+var bandsintown = (keys.bandsintown);
 
 //taking input in command line
 
