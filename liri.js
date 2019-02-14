@@ -2,7 +2,7 @@
 
 require("dotenv").config();
 
-const request = require("request");
+const request = require("axios");
 const moment = require("moment");
 const keys = require ("./keys.js");
 
@@ -63,7 +63,7 @@ function spotifyThis() {
 
 function concertThis(){
     console.log('searching for '+$(userQuery)+" shows");
-    request("https://rest.bandsintown.com/artists/" + userQuery + "/events?app_id=codingbootcamp" + bandsintown, function (error, response, body) {
+    axios.get("https://rest.bandsintown.com/artists/" + userQuery + "/events?app_id=codingbootcamp" + bandsintown, function (error, response, body) {
         if (!error && response.statusCode === 200) {
             let userBand = JSON.parse(body);
             if (userBand.length > 0) {
@@ -85,7 +85,7 @@ function movieThis() {
     if (!userQuery) {
         userQuery = "mr nobody";
     };
-    request("http://www.omdbapi.com/?t=" + userQuery + "&apikey=7bb1ce60", function (error, response, body) {
+    axios.get("http://www.omdbapi.com/?t=" + userQuery + "&apikey=7bb1ce60", function (error, response, body) {
         let userMovie = JSON.parse(body);
         let ratingsArr = userMovie.Ratings;
         if (ratingsArr.length > 2) {}
